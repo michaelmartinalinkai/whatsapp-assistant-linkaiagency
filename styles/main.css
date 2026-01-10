@@ -289,6 +289,74 @@ p {
     transform: translateY(-2px);
 }
 
+/* ===== PREMIUM WHATSAPP BUTTON ===== */
+.btn-whatsapp-premium {
+    background: linear-gradient(135deg, #60E18B 0%, #25D366 50%, #1DA851 100%);
+    color: #fff;
+    padding: 18px 40px 18px 32px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 60px;
+    box-shadow:
+        0 8px 24px rgba(37, 211, 102, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+    gap: 12px;
+    animation: none;
+    /* Override the pulsing animation */
+}
+
+.btn-whatsapp-premium::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    border-radius: 60px 60px 0 0;
+    pointer-events: none;
+}
+
+.btn-whatsapp-premium .whatsapp-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.btn-whatsapp-premium:hover {
+    background: linear-gradient(135deg, #6FE89A 0%, #2EE075 50%, #25B855 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow:
+        0 12px 32px rgba(37, 211, 102, 0.5),
+        0 6px 16px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-whatsapp-premium:active {
+    transform: translateY(-1px) scale(0.99);
+    box-shadow:
+        0 4px 16px rgba(37, 211, 102, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile adjustments for premium button */
+@media (max-width: 600px) {
+    .btn-whatsapp-premium {
+        padding: 16px 28px 16px 24px;
+        font-size: 1.1rem;
+        gap: 10px;
+    }
+
+    .btn-whatsapp-premium .whatsapp-icon {
+        width: 26px;
+        height: 26px;
+    }
+}
+
 .sticky-cta {
     position: fixed;
     bottom: 20px;
