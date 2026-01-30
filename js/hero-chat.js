@@ -18,10 +18,8 @@ const heroMessages = [
 ];
 
 const problemMessages = [
-    { type: 'user', text: 'Ik wil mijn afspraak verzetten.', delay: 800 },
+    { type: 'bot', text: 'Wanneer zou je willen komen?', delay: 800 },
     { type: 'typing', delay: 1500 },
-    { type: 'bot', text: 'Geen probleem! Wanneer zou je willen komen?', delay: 600 },
-    { type: 'typing', delay: 1200 },
     { type: 'bot', text: 'We hebben morgen plek om 10:00 of 14:00.', delay: 1000 },
     { type: 'pause', delay: 2500 },
     { type: 'user', text: '14:00 is perfect!', delay: 800 },

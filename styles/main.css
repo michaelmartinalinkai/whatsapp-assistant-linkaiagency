@@ -396,36 +396,81 @@ h1:hover {
 }
 
 /* 2. Abstract Tech Background */
-.hero-section {
+/* HERO STRUCTURE (Structured via User Prompt) */
+.hero {
     position: relative;
     overflow: hidden;
 }
 
-.hero-section::before {
-    content: "";
+.hero-media {
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background-image: radial-gradient(rgba(37, 211, 102, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-    animation: driftBackground 60s linear infinite;
-    z-index: -1;
+    inset: 0;
+    z-index: 0;
 }
 
-.hero-section::after {
+.hero-bg-video,
+.hero-bg-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Opacity adjustment for readability if needed, standardizing at 1.0 per user request, 
+       but keeping a subtle white wash via ::after as recommended text can be hard to read otherwise.
+       User "DO NOT" list said "Video = background layer", didn't forbid opacity overlay on the container. */
+}
+
+/* Optional Readability Layer (Recommended) */
+.hero-media::after {
     content: "";
     position: absolute;
-    top: 20%;
-    right: 10%;
-    width: 300px;
-    height: 300px;
-    background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(18, 140, 126, 0.05));
-    filter: blur(60px);
-    border-radius: 50%;
-    animation: floatBlob 10s ease-in-out infinite alternate;
-    z-index: -1;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.4);
+    /* Slightly lighter than 0.72 to keep video vibrant, but ensure text has contrast */
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+    min-height: clamp(520px, 70vh, 760px);
+    padding: clamp(32px, 5vw, 72px) 0;
+    /* Adjusted padding to vertical only, container handles horizontal */
+}
+
+.hero-left {
+    /* Main Content Area */
+}
+
+.hero-right {
+    position: relative;
+    z-index: 3;
+    /* Ensure phone stays on top */
+}
+
+@media (max-width: 900px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .trust-badge {
+        justify-content: center;
+    }
 }
 
 @keyframes driftBackground {
@@ -912,10 +957,10 @@ h1:hover {
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 100px;
     padding: 12px 28px;
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto 40px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    flex-wrap: wrap;
+    white-space: nowrap;
 }
 
 .trust-stars {
@@ -1207,5 +1252,208 @@ h1:hover {
 
     .feature-card-photo {
         height: 280px;
+    }
+}
+
+/* === NEW PROBLEM SECTION STYLES === */
+.problem-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 480px;
+    margin: 0 auto;
+    /* Center on mobile, left on desktop via grid */
+}
+
+/* Floating Bubbles */
+.floating-bubbles {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.float-bubble {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #F0F2F5;
+    padding: 10px 16px;
+    border-radius: 20px;
+    border-bottom-left-radius: 4px;
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.bubble-delayed {
+    margin-left: 24px;
+}
+
+.avatar-sm {
+    width: 36px;
+    height: 36px;
+    background: #E5E7EB;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.avatar-icon {
+    width: 24px;
+    height: 24px;
+    fill: #9CA3AF;
+}
+
+.bubble-text {
+    font-size: 0.95rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+.bubble-text::before {
+    content: 'Klant';
+    display: block;
+    font-size: 0.75rem;
+    color: #6B7280;
+    margin-bottom: 2px;
+}
+
+/* Warning Label */
+.warning-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #4B5563;
+    margin-bottom: 12px;
+    padding-left: 4px;
+}
+
+.warning-icon {
+    font-size: 1.2rem;
+}
+
+/* Problem Cards Stack */
+.problem-cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.problem-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #FFFFFF;
+    padding: 16px 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s;
+}
+
+.problem-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.problem-icon-box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.problem-icon-box svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Icon Colors */
+.icon-clock {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.icon-hourglass {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.icon-refresh {
+    background: #ecfccb;
+    color: #65a30d;
+}
+
+.icon-chat {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.problem-text h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin: 0 0 2px 0;
+}
+
+.problem-text p {
+    font-size: 0.85rem;
+    color: #6B7280;
+    margin: 0;
+    line-height: 1.4;
+}
+
+
+/* === MOBILE PROBLEM SECTION FIXES === */
+@media (max-width: 899px) {
+
+    /* Hide phone mockup on mobile */
+    .problem-visual {
+        display: none;
+    }
+
+    /* Full width for problem content wrapper */
+    .problem-content-wrapper {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    /* Align bubbles to left edge */
+    .float-bubble {
+        max-width: 90%;
+    }
+
+    .bubble-delayed {
+        margin-left: 16px;
+    }
+
+    /* Smaller padding on mobile cards */
+    .problem-card {
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .problem-icon-box {
+        width: 36px;
+        height: 36px;
+    }
+
+    .problem-icon-box svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .problem-text h4 {
+        font-size: 0.95rem;
+    }
+
+    .problem-text p {
+        font-size: 0.8rem;
     }
 }

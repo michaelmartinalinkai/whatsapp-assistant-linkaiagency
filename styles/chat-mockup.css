@@ -285,3 +285,17 @@
     margin-right: 0;
     align-self: center;
 }
+/* Inverted Colors for Problem Section (Image Match) */
+.chat-bubble.business-left-green {
+    background: #dcf8c6;
+    color: #1f2937;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.chat-bubble.customer-right-white {
+    background: #fff;
+    color: #1f2937;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
