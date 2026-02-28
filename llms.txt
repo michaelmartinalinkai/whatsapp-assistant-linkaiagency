@@ -1,0 +1,45 @@
+# WhatsApp Assist by Link AI Agency
+
+> AI-powered WhatsApp assistant that automatically answers customer messages, schedules appointments, and sends information — 24/7, within seconds.
+
+WhatsApp Assist is a product by Link AI Agency (https://linkaiagency.com). It helps businesses automate their WhatsApp customer communication using AI.
+
+## What it does
+
+- Automatically responds to customer messages on WhatsApp within seconds
+- Answers frequently asked questions about your business
+- Schedules appointments and sends confirmations
+- Sends product information, pricing, and brochures
+- Escalates complex questions to a human team member
+- Integrates with your CRM and calendar systems
+- Works 24/7, even outside business hours
+
+## Who it's for
+
+WhatsApp Assist is built for small and medium businesses that receive customer inquiries via WhatsApp:
+- Beauty salons, barbers, and wellness centers
+- Fitness studios and personal trainers
+- Real estate agencies
+- Automotive services
+- Restaurants and hospitality
+- E-commerce and webshops
+- Any business where fast response time matters
+
+## Key benefits
+
+- Never lose a customer due to slow response times
+- Save hours per week on repetitive customer questions
+- Increase conversion by responding instantly
+- Professional 24/7 customer service without extra staff
+- Easy setup — no technical knowledge required
+
+## Technology
+
+WhatsApp Assist uses advanced AI (large language models) trained on your specific business information. It understands natural language in Dutch and English, and learns from your FAQ, product catalog, and business rules.
+
+## Contact
+
+- Website: https://whatsapp.linkaiagency.com
+- Parent company: https://linkaiagency.com
+- WhatsApp: https://wa.me/31686447995
+- Location: Amsterdam, Netherlands
