@@ -21,6 +21,36 @@
     <link rel="stylesheet" href="styles/faq.css">
     <link rel="stylesheet" href="styles/chat-mockup.css">
     <link rel="stylesheet" href="styles/pricing.css">
+
+    <!-- Meta Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '899289863162205');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=899289863162205&ev=PageView&noscript=1"/></noscript>
+
+    <!-- Meta Contact Event — tracks WhatsApp button clicks -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
+          link.addEventListener('click', function() {
+            fbq('track', 'Contact', {
+              content_name: link.innerText.trim() || 'WhatsApp CTA',
+              content_category: 'Lead'
+            });
+          });
+        });
+      });
+    </script>
 </head>
 
 <body>
