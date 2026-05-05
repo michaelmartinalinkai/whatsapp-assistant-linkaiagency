@@ -19,9 +19,9 @@ User-agent: Claude-Web
 Allow: /
 
 # Sitemap location
-Sitemap: https://linkaiagency.com/whatsapp-ai-chatbot/sitemap.xml
+Sitemap: https://whatsapp.linkaiagency.com/sitemap.xml
 
-# Disallow specific paths (optional)
+# Disallow specific paths
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
